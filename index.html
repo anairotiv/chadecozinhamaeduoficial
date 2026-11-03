@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chá de Cozinha — Marina &amp; Edward</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;1,6..96,400&family=Manrope:wght@400;500;600;700&family=Pinyon+Script&display=swap">
+<link rel="stylesheet" href="style.css?v=2"></head><body>
+<header><a class="logo" href="#inicio">Marina &amp; Edward</a>
+<button id="mb" aria-expanded="false" aria-controls="nav">Menu</button>
+<nav id="nav"><a href="#inicio">Início</a><a href="#presenca">Confirmar presença</a><a href="#presentes">Lista de presentes</a><a href="#informacoes">Informações</a></nav></header>
+<main>
+
+<section id="inicio" class="hero">
+<div class="hero-t"><p class="sm">Você está convidado para o nosso</p>
+<h1>Chá de<br>Cozinha</h1><p class="script">Marina &amp; Edward</p></div>
+<div class="foto"><img src="foto-casal.jpg" alt="Marina e Edward abraçados diante do Rio Douro, no Porto"></div>
+<div class="when"><div><b>Sábado</b><span>14h30</span></div><div><em>05</em><b>Dezembro 2026</b></div><div><b class="r">Local</b><span>Rua Santa Cruz, nº 5<br>Chácaras Califórnia<br>Embu-Guaçu — SP</span></div></div>
+<div id="cd" class="cd" aria-live="off"></div>
+<div class="btns"><a class="btn" href="#presenca">Confirmar presença</a><a class="btn alt" href="#presentes">Escolher meu presente</a></div>
+<p class="quote">“Estamos preparando tudo com muito carinho para celebrar esse novo capítulo da nossa história. Sua presença é o melhor presente, mas, se quiser nos ajudar a montar nosso cantinho, preparamos uma lista especial.”</p>
+</section>
+
+<div class="dm"><i></i><i class="w"></i><i></i></div>
+
+<section id="presenca" class="sec c"><h2>Você vem celebrar com a gente?</h2>
+<p class="lead">Confirme sua presença até <span id="prazo"></span>.</p>
+<div class="formcard">
+<form id="rsvp" novalidate>
+<div class="field"><label for="nome">Nome completo *</label>
+<input id="nome" name="nome" type="text" autocomplete="name" required></div>
+
+<div class="field"><label for="tel">Telefone ou WhatsApp (opcional)</label>
+<input id="tel" name="tel" type="tel" autocomplete="tel"></div>
+
+<div class="field"><span class="lbl" id="lblv">Você poderá comparecer? *</span>
+<div class="toggle" role="radiogroup" aria-labelledby="lblv">
+<button type="button" role="radio" aria-checked="false" data-v="Sim">Sim, estarei lá</button>
+<button type="button" role="radio" aria-checked="false" data-v="Não">Infelizmente, não poderei ir</button>
+</div></div>
+
+<div id="acomp" hidden>
+<div class="field"><label for="qtd">Acompanhantes (máx. 3)</label>
+<select id="qtd" name="qtd"><option value="0">Sem acompanhantes</option><option value="1">1 acompanhante</option><option value="2">2 acompanhantes</option><option value="3">3 acompanhantes</option></select></div>
+<div id="nomes"></div>
+</div>
+
+<p class="msg" id="msg" role="status" hidden></p>
+<button class="btn full" type="submit" id="enviar">Enviar resposta</button>
+</form>
+<div id="ok" class="okbox" hidden><h3>Que alegria!</h3><p>Sua resposta foi enviada. Obrigado por responder!</p></div>
+</div>
+</section>
+
+<div class="dm"><i></i><i class="w"></i><i></i></div>
+
+<section id="presentes" class="sec"><h2 class="c">Lista de presentes</h2>
+<p class="lead c">Sua presença é o melhor presente. Se quiser nos ajudar a montar nosso cantinho, escolha como prefere presentear.</p>
+<div class="opts">
+<article class="opt"><h3>Comprar presentes diretamente dos sites</h3>
+<p>Escolha um item da nossa lista, reserve para que ninguém repita e compre direto na loja.</p>
+<button class="btn" data-open="lista">Ver lista de presentes</button></article>
+<article class="opt"><h3>Contribuir para a vaquinha de presentes premium</h3>
+<p>Alguns presentes são maiores e podem ser realizados com a ajuda de várias pessoas. Contribua com o valor que fizer sentido.</p>
+<button class="btn" data-open="vaquinha">Contribuir na vaquinha</button></article>
+</div>
+
+<div id="p-lista" class="painel" hidden>
+<div class="ph-top"><h3>Comprar presentes diretamente dos sites</h3><button class="fechar-p" data-close>Fechar</button></div>
+<p class="c small">Escolheu? Reserve para que ninguém repita. Reservar não é comprar: a compra é feita por você, na loja.</p>
+<div id="filtros" class="filtros"></div><div id="grid" class="grid"></div>
+</div>
+
+<div id="p-vaquinha" class="painel" hidden>
+<div class="ph-top"><h3>Vaquinha de presentes premium</h3><button class="fechar-p" data-close>Fechar</button></div>
+<p class="c small">Escolha o presente que gostaria de nos ajudar a conquistar e contribua com o valor que fizer sentido para você.</p>
+<div id="vgrid" class="grid"></div>
+</div>
+</section>
+
+<div class="dm"><i></i><i class="w"></i><i></i></div>
+
+<section id="informacoes" class="sec c"><h2>Informações</h2>
+<p><b>Sábado, 05 de dezembro de 2026, às 14h30</b></p>
+<p>Rua Santa Cruz, nº 5, Chácaras Califórnia<br>Embu-Guaçu — SP</p>
+<p>Confirme até <span id="prazo2"></span>.</p>
+<p><a class="btn alt" id="mapa" target="_blank" rel="noopener" href="#">Abrir no mapa</a></p></section>
+</main>
+<footer>Com carinho, <span class="script">Marina &amp; Edward.</span></footer>
+<dialog id="dlg"><div id="dlgc"></div><button class="x" id="fechar" aria-label="Fechar">×</button></dialog>
+<script src="config.js?v=2"></script><script src="app.js?v=2"></script></body></html>

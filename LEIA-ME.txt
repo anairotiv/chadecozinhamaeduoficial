@@ -1,0 +1,34 @@
+SITE DO CHÁ DE COZINHA — MARINA & EDWARD
+=========================================
+Arquivos: index.html, style.css, app.js (não precisa mexer), config.js (o que você edita),
+foto-casal.jpg (foto da capa) e apps-script.gs (script do Google, colado uma vez na planilha).
+
+COMO FUNCIONA
+ Um único link (formEndpoint, no config.js) recebe tudo e grava na sua planilha Google:
+   aba "Presenças"      -> confirmações de presença
+   aba "Reservas"       -> presentes reservados (somem da lista do site sozinhos)
+   aba "Contribuições"  -> avisos de Pix da vaquinha
+
+CONFIGURAR (uma vez)
+ 1) Planilha no Google Sheets > Extensões > Apps Script > apague tudo e cole o conteúdo de apps-script.gs > Salvar.
+ 2) Implantar > Nova implantação > App da Web > Executar como: Eu; Acesso: Qualquer pessoa > Implantar.
+    Copie o link /exec e cole em config.js, em formEndpoint.
+ 3) Se alterar o script depois: Implantar > Gerenciar implantações > lápis > Versão: Nova versão > Implantar.
+    (o link continua o mesmo)
+
+TESTAR
+ - Abra o link /exec no navegador: deve aparecer {"reservados":[]}.
+ - No site, envie uma confirmação, reserve um presente e avise uma contribuição de teste; confira as 3 abas.
+ - Para liberar um presente de novo (ou apagar testes), apague a linha na aba correspondente.
+ - Aviso honesto: o site mostra "enviado" mesmo se o Google falhar. Confira sempre na planilha.
+
+PIX E VAQUINHA
+ - Preencha pix e pixNome no config.js.
+ - A barra da vaquinha soma sozinha o que as pessoas avisam pelo site (aba "Contribuições"). Não precisa editar nada.
+ - O site não confere o Pix: se algum aviso estiver errado, apague a linha na aba e a barra corrige sozinha.
+ - Para mudar o valor-meta de um presente, edite "meta" no config.js.
+
+FOTOS DOS PRODUTOS: ficam na pasta imagens/ e já estão ligadas no config.js (campo img). Para trocar uma foto, substitua o arquivo da pasta mantendo o nome.
+FOTO DO CASAL: substitua foto-casal.jpg mantendo o mesmo nome.
+
+PUBLICAR (Vercel): suba a pasta com o index.html na raiz. Para testar no computador, abra o index.html.
