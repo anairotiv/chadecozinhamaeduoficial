@@ -1,15 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Allura&family=Abril+Fatface&display=swap");
+/* ===== FONTES (troque aqui, em um só lugar) =====
+   script  -> parecida com Brittany Signature
+   titulo  -> parecida com Bauer Bodoni Condensed
+   texto   -> Montserrat (a mesma da marca) */
+:root{
+  --f-script:"Allura",cursive;
+  --f-titulo:"Abril Fatface",serif;
+  --f-texto:"Montserrat",Arial,sans-serif;
+}
 :root{--p:#111;--b:#FAF9F6;--o:#F2F0EB;--r:#9E1738;--l:#D6D2CB;--g:#55514F;--bg:#ECE9E4;--paper:#F3F1ED}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:80px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{margin:0;font:400 16px/1.6 Manrope,Inter,sans-serif;color:var(--p);background:var(--bg)}
+body{margin:0;font:400 16px/1.6 var(--f-texto);color:var(--p);background:var(--bg)}
 :focus-visible{outline:2px solid var(--r);outline-offset:3px}
-h1,h2,h3,.quote,em{font-family:"Bodoni Moda",serif;font-weight:400}
-.script,.logo{font-family:"Pinyon Script",cursive;color:var(--r)}
+h1,h2,h3,em{font-family:var(--f-titulo);font-weight:400;letter-spacing:-.01em}
+.script,.logo{font-family:var(--f-script);color:var(--r)}
 
 /* ===== Cabeçalho ===== */
 header{position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;padding:14px 44px;background:#FCFBF7;border-bottom:1px solid var(--l);border-top:1px solid var(--p)}
 .logo{font-size:32px;line-height:1;text-decoration:none}
-#mb{background:none;border:1px solid var(--p);padding:7px 16px;font:600 12px Manrope;letter-spacing:.15em;text-transform:uppercase;cursor:pointer}
+#mb{background:none;border:1px solid var(--p);padding:7px 16px;font:600 12px var(--f-texto);letter-spacing:.15em;text-transform:uppercase;cursor:pointer}
 nav{display:none;position:absolute;top:100%;left:0;right:0;background:#FCFBF7;border-bottom:1px solid var(--p);flex-direction:column;align-items:stretch}
 nav.on{display:flex}
 nav a{padding:16px 20px;border-top:1px solid var(--l);color:var(--g);text-decoration:none;font-size:12px;letter-spacing:.2em;text-transform:uppercase;text-align:center}
@@ -19,8 +29,7 @@ nav a{padding:16px 20px;border-top:1px solid var(--l);color:var(--g);text-decora
 main{max-width:1064px;margin:auto;padding:0 20px}
 
 /* ===== Capa ===== */
-.hero{position:relative;border:1px solid var(--p);background:var(--paper);margin:64px 0 24px;padding:56px 24px 40px;display:grid;gap:32px}
-.hero::before{content:"";position:absolute;top:-1px;left:-1px;right:-1px;height:10px;background:conic-gradient(#111 25%,#fff 0 50%,#111 0 75%,#fff 0) 0 0/10px 10px;pointer-events:none}
+.hero{position:relative;border:10px solid transparent;outline:1px solid var(--p);background:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22%3E%3Cfilter id=%22m%22 x=%220%22 y=%220%22 width=%22100%25%22 height=%22100%25%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.005%22 numOctaves=%222%22 seed=%222%22 stitchTiles=%22stitch%22/%3E%3CfeColorMatrix values=%220 0 0 0 0.5  0 0 0 0 0.47  0 0 0 0 0.43  0 0 0 0.22 -0.04%22/%3E%3C/filter%3E%3Cfilter id=%22g%22 x=%220%22 y=%220%22 width=%22100%25%22 height=%22100%25%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%223%22 seed=%224%22 stitchTiles=%22stitch%22/%3E%3CfeColorMatrix values=%220 0 0 0 0.35  0 0 0 0 0.32  0 0 0 0 0.28  0 0 0 0.07 0%22/%3E%3C/filter%3E%3Cfilter id=%22f%22 x=%220%22 y=%220%22 width=%22100%25%22 height=%22100%25%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.16 0.12%22 numOctaves=%222%22 seed=%2211%22 stitchTiles=%22stitch%22/%3E%3CfeColorMatrix values=%220 0 0 0 0.42  0 0 0 0 0.36  0 0 0 0 0.30  0 0 0 14 -10.7%22/%3E%3C/filter%3E%3Crect width=%22400%22 height=%22400%22 filter=%22url(%23m)%22/%3E%3Crect width=%22400%22 height=%22400%22 filter=%22url(%23g)%22/%3E%3Crect width=%22400%22 height=%22400%22 filter=%22url(%23f)%22 opacity=%220.32%22/%3E%3C/svg%3E") padding-box,linear-gradient(var(--paper),var(--paper)) padding-box,url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' shape-rendering='crispEdges'%3E%3Crect width='10' height='10' fill='%23fff'/%3E%3Crect width='5' height='5' fill='%23111'/%3E%3Crect x='5' y='5' width='5' height='5' fill='%23111'/%3E%3C/svg%3E") border-box;background-size:400px 400px,100% 100%,10px 10px;background-repeat:repeat,no-repeat,round;margin:64px 0 24px;padding:56px 24px 40px;display:grid;gap:32px}
 .hero::after{content:"";position:absolute;inset:6px;border:1px solid var(--p);pointer-events:none}
 .hero>*{position:relative;z-index:1}
 .sm{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--g);margin:0}
@@ -34,13 +43,13 @@ h1{font-size:clamp(52px,13vw,96px);line-height:.95;margin:14px 0 12px;text-trans
 .when em{font-size:72px;line-height:1;font-style:normal}.when span{font-size:15px}
 @media(min-width:820px){.hero{grid-template-columns:1.4fr 1fr;padding:72px 64px 56px;gap:40px 32px;align-items:center}.hero .foto{justify-self:center}.when,.cd,.btns,.quote{grid-column:1/-1}.when{grid-template-columns:1fr 1fr 1fr}.when div+div{border-left:1px solid var(--l)}}
 .cd{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
-.cd div{border:1px solid var(--p);min-width:76px;padding:10px 8px;text-align:center}.cd b{display:block;font:400 30px "Bodoni Moda",serif}.cd span{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--g)}
+.cd div{border:1px solid var(--p);min-width:76px;padding:10px 8px;text-align:center}.cd b{display:block;font:400 30px var(--f-titulo)}.cd span{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--g)}
 .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.btn{display:inline-block;background:var(--r);color:#fff;border:1px solid var(--r);padding:14px 26px;font:600 12px Manrope;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;text-align:center;cursor:pointer}
+.btn{display:inline-block;background:var(--r);color:#fff;border:1px solid var(--r);padding:14px 26px;font:600 12px var(--f-texto);letter-spacing:.18em;text-transform:uppercase;text-decoration:none;text-align:center;cursor:pointer}
 .btn.alt{background:none;color:var(--p);border-color:var(--p)}.btn:hover{filter:brightness(.9)}
 .btn[disabled]{opacity:.5;cursor:default}
 .btn.full{display:block;width:100%}
-.quote{font-style:italic;font-size:clamp(20px,3.5vw,28px);line-height:1.5;text-align:center;margin:12px auto 0;max-width:720px}
+.quote{font-family:var(--f-texto);font-weight:400;font-size:clamp(15px,2.2vw,18px);line-height:1.8;text-align:center;margin:12px auto 0;max-width:720px}
 .dm{display:flex;justify-content:center;align-items:center;gap:10px;margin:56px 0}
 .dm i{width:9px;height:9px;transform:rotate(45deg);background:var(--p);border:1px solid var(--p)}.dm i.w{background:var(--bg)}
 
@@ -55,8 +64,8 @@ h2{font-size:clamp(28px,6vw,44px);line-height:1.15;text-transform:uppercase;marg
 .formcard::after{content:"";position:absolute;inset:6px;border:1px solid var(--p);pointer-events:none}
 @media(max-width:560px){.formcard{padding:44px 26px 36px}}
 .field{margin-bottom:38px}
-.field label,.field .lbl{display:block;margin-bottom:12px;font:700 11px Manrope;letter-spacing:.22em;text-transform:uppercase;color:var(--p)}
-.field input,.field select,.field textarea{display:block;width:100%;margin:0;padding:10px 0 12px;font:400 16px Manrope,sans-serif;color:var(--p);background:transparent;border:0;border-bottom:1px solid var(--l);border-radius:0;outline:none;box-shadow:none;-webkit-appearance:none;appearance:none;transition:border-color .2s}
+.field label,.field .lbl{display:block;margin-bottom:12px;font:700 11px var(--f-texto);letter-spacing:.22em;text-transform:uppercase;color:var(--p)}
+.field input,.field select,.field textarea{display:block;width:100%;margin:0;padding:10px 0 12px;font:400 16px var(--f-texto);color:var(--p);background:transparent;border:0;border-bottom:1px solid var(--l);border-radius:0;outline:none;box-shadow:none;-webkit-appearance:none;appearance:none;transition:border-color .2s}
 .field select{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23111' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat right 2px center;padding-right:24px;cursor:pointer}
 .field input:hover,.field select:hover{border-bottom-color:#9b968f}
 .field input:focus,.field select:focus,.field input:focus-visible,.field select:focus-visible{outline:none;box-shadow:none;border-bottom-color:var(--r)}
@@ -64,43 +73,69 @@ h2{font-size:clamp(28px,6vw,44px);line-height:1.15;text-transform:uppercase;marg
 .field.err input,.field.err .toggle{border-bottom-color:var(--r)}
 .field.err .toggle button{border-color:var(--r)}
 .toggle{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.toggle button{padding:15px 10px;background:none;border:1px solid var(--p);font:500 14px Manrope;color:var(--p);cursor:pointer;outline:none;transition:background .2s,color .2s}
+.toggle button{padding:15px 10px;background:none;border:1px solid var(--p);font:500 14px var(--f-texto);color:var(--p);cursor:pointer;outline:none;transition:background .2s,color .2s}
 .toggle button[aria-checked=true]{background:var(--r);border-color:var(--r);color:#fff}
 .toggle button:focus-visible{outline:1px solid var(--r);outline-offset:3px}
 @media(max-width:420px){.toggle{grid-template-columns:1fr}}
 .msg{margin:0 0 20px;font-size:14px;color:var(--r);max-width:none!important}
-.okbox{text-align:center;padding:24px 0}.okbox h3{font:400 30px "Bodoni Moda",serif;margin:0 0 10px}.okbox p{margin:0 auto}
+.okbox{text-align:center;padding:24px 0}.okbox h3{font:400 30px var(--f-titulo);margin:0 0 10px}.okbox p{margin:0 auto}
 
 /* ===== Lista de presentes: 2 caixas ===== */
 .opts{display:grid;gap:28px;grid-template-columns:1fr;margin:40px 0 0}
 @media(min-width:760px){.opts{grid-template-columns:1fr 1fr}}
 .opt{position:relative;background:var(--b);border:1px solid var(--p);padding:44px 36px 40px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px}
 .opt::after{content:"";position:absolute;inset:6px;border:1px solid var(--p);pointer-events:none}
-.opt h3{font:400 clamp(22px,3vw,28px)/1.2 "Bodoni Moda",serif;margin:0}
+.opt h3{font:400 clamp(22px,3vw,28px)/1.2 var(--f-titulo);margin:0}
 .opt p{margin:0;font-size:15px;color:var(--g)}
 .opt .btn{margin-top:auto}
 .painel{margin-top:56px;scroll-margin-top:90px}
 .ph-top{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--p);padding-bottom:14px;margin-bottom:20px}
-.ph-top h3{font:400 clamp(22px,4vw,30px)/1.2 "Bodoni Moda",serif;margin:0}
-.fechar-p{background:none;border:0;border-bottom:1px solid var(--p);padding:2px 0;font:600 11px Manrope;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;color:var(--p)}
+.ph-top h3{font:400 clamp(22px,4vw,30px)/1.2 var(--f-titulo);margin:0}
+.fechar-p{background:none;border:0;border-bottom:1px solid var(--p);padding:2px 0;font:600 11px var(--f-texto);letter-spacing:.2em;text-transform:uppercase;cursor:pointer;color:var(--p)}
 .filtros{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:24px 0}
-.filtros button{background:none;border:1px solid var(--l);padding:8px 16px;font:500 12px Manrope;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
+.filtros button{background:none;border:1px solid var(--l);padding:8px 16px;font:500 12px var(--f-texto);letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
 .filtros button[aria-pressed=true]{border-color:var(--r);color:var(--r)}
 .grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));margin-top:24px}
 .card{background:var(--o);border:1px solid var(--p);display:flex;flex-direction:column}
 .card img,.ph{width:100%;aspect-ratio:1;object-fit:contain;background:#fff;border-bottom:1px solid var(--p)}.ph{background:var(--l)}
 .ph{display:grid;place-items:center}.ph i{width:34px;height:34px;transform:rotate(45deg);border:1px solid var(--g)}
-.cb{padding:20px;display:flex;flex-direction:column;gap:12px;flex:1}.cb h3{font:400 20px/1.25 "Bodoni Moda",serif;margin:0}
+.cb{padding:20px;display:flex;flex-direction:column;gap:12px;flex:1}.cb h3{font:600 15px/1.45 var(--f-texto);margin:0}
 .cb .sm{font-size:11px}.cb .btn{text-align:center;padding:12px;font-size:11px}.cb .btn:last-child{margin-top:auto}
 .bar{height:4px;background:var(--l)}.bar i{display:block;height:100%;background:var(--r)}
 .v{display:flex;justify-content:space-between;font-size:13px;color:var(--g)}
-.ok{color:var(--r);font:600 12px Manrope;letter-spacing:.18em;text-transform:uppercase;text-align:center;padding:11px}
+.ok{color:var(--r);font:600 12px var(--f-texto);letter-spacing:.18em;text-transform:uppercase;text-align:center;padding:11px}
 
 /* ===== Janela / rodapé ===== */
 dialog{border:1px solid var(--p);background:var(--b);color:var(--p);max-width:480px;width:calc(100% - 32px);padding:32px 26px}
 dialog::backdrop{background:rgba(17,17,17,.55)}
 .x{position:absolute;top:6px;right:10px;background:none;border:0;font-size:28px;cursor:pointer;color:var(--p)}
-dialog h3{font:400 26px "Bodoni Moda",serif;margin:0 0 12px}dialog .btn{margin:8px 8px 0 0}
+dialog h3{font:400 26px var(--f-titulo);margin:0 0 12px}dialog .btn{margin:8px 8px 0 0}
 .pix{display:flex;gap:8px;align-items:center;border:1px solid var(--l);padding:10px;word-break:break-all;margin:12px 0}
 .sug{display:flex;gap:8px;flex-wrap:wrap}.sug span{border:1px solid var(--l);padding:4px 12px;font-size:14px}
 footer{text-align:center;padding:48px 20px;border-top:1px solid var(--l);margin-top:56px;font-size:15px}footer .script{font-size:30px}
+
+/* ===== Páginas separadas ===== */
+.js .page{display:none}.js .page.on{display:block}
+.page{padding-top:56px;padding-bottom:24px}
+#pg-inicio{padding-top:0}
+header nav a[aria-current=page]{color:var(--r)}
+.eyebrow{display:block;font:600 11px var(--f-texto);letter-spacing:.3em;text-transform:uppercase;color:var(--r);margin:0 0 14px}
+.rule{display:block;width:60px;height:1px;background:var(--p);margin:20px auto 24px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--p);border-bottom:1px solid var(--p);margin:56px 0 8px}
+.step{display:flex;flex-direction:column;gap:10px;padding:32px 28px;color:inherit;text-decoration:none;border-left:1px solid var(--p)}
+.step:first-child{border-left:0}.step:hover h3{color:var(--r)}
+.step b{font:400 40px/1 var(--f-titulo);color:var(--r)}
+.step h3{font:400 22px/1.25 var(--f-titulo);margin:8px 0 0}
+.step p{margin:0;font-size:14px;color:var(--g)}
+.step>span{margin-top:auto;padding-top:10px;font:600 11px var(--f-texto);letter-spacing:.22em;text-transform:uppercase;color:var(--r)}
+@media(max-width:760px){.steps{grid-template-columns:1fr}.step{border-left:0;border-top:1px solid var(--p)}.step:first-child{border-top:0}}
+.info{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--p);margin:40px 0 28px;text-align:center}
+.info>div{padding:48px 28px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
+.info>div+div{border-left:1px solid var(--p)}
+.info .mini{font:700 11px var(--f-texto);letter-spacing:.22em;text-transform:uppercase}.info .mini.r{color:var(--r)}
+.info .big{font:400 clamp(64px,10vw,96px)/1 var(--f-titulo)}
+.info .hr{width:36px;height:1px;background:var(--p);margin:6px 0}
+.info .hora{font:400 30px/1 var(--f-titulo)}
+.info .end{font:400 clamp(20px,2.6vw,26px)/1.4 var(--f-titulo);margin-bottom:8px}
+.page .small a{color:var(--r)}
+@media(max-width:700px){.info{grid-template-columns:1fr}.info>div+div{border-left:0;border-top:1px solid var(--p)}}

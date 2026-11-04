@@ -4,13 +4,15 @@
 <title>Chá de Cozinha — Marina &amp; Edward</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;1,6..96,400&family=Manrope:wght@400;500;600;700&family=Pinyon+Script&display=swap">
-<link rel="stylesheet" href="style.css?v=2"></head><body>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Allura&family=Abril+Fatface&display=swap">
+<script>document.documentElement.className+=" js"</script>
+<link rel="stylesheet" href="style.css?v=5"></head><body>
 <header><a class="logo" href="#inicio">Marina &amp; Edward</a>
 <button id="mb" aria-expanded="false" aria-controls="nav">Menu</button>
 <nav id="nav"><a href="#inicio">Início</a><a href="#presenca">Confirmar presença</a><a href="#presentes">Lista de presentes</a><a href="#informacoes">Informações</a></nav></header>
 <main>
 
+<div id="pg-inicio" class="page">
 <section id="inicio" class="hero">
 <div class="hero-t"><p class="sm">Você está convidado para o nosso</p>
 <h1>Chá de<br>Cozinha</h1><p class="script">Marina &amp; Edward</p></div>
@@ -19,11 +21,17 @@
 <div id="cd" class="cd" aria-live="off"></div>
 <div class="btns"><a class="btn" href="#presenca">Confirmar presença</a><a class="btn alt" href="#presentes">Escolher meu presente</a></div>
 <p class="quote">“Estamos preparando tudo com muito carinho para celebrar esse novo capítulo da nossa história. Sua presença é o melhor presente, mas, se quiser nos ajudar a montar nosso cantinho, preparamos uma lista especial.”</p>
+
 </section>
 
-<div class="dm"><i></i><i class="w"></i><i></i></div>
+<div class="steps" role="navigation" aria-label="Como participar">
+<a class="step" href="#presenca"><b>I</b><h3>Confirme sua presença</h3><p>Responda até <span class="prazo-s"></span>.</p><span>Acessar →</span></a>
+<a class="step" href="#presentes"><b>II</b><h3>Escolha um presente</h3><p>Itens escolhidos com carinho para o nosso novo lar.</p><span>Acessar →</span></a>
+<a class="step" href="#presentes" data-open="vaquinha"><b>III</b><h3>Contribua para realizar um sonho</h3><p>Presentes maiores, conquistados juntos.</p><span>Acessar →</span></a>
+</div>
+</div>
 
-<section id="presenca" class="sec c"><h2>Você vem celebrar com a gente?</h2>
+<section id="presenca" class="sec c page"><span class="eyebrow">RSVP</span><h2>Você vem celebrar com a gente?</h2><i class="rule"></i>
 <p class="lead">Confirme sua presença até <span id="prazo"></span>.</p>
 <div class="formcard">
 <form id="rsvp" novalidate>
@@ -52,9 +60,7 @@
 </div>
 </section>
 
-<div class="dm"><i></i><i class="w"></i><i></i></div>
-
-<section id="presentes" class="sec"><h2 class="c">Lista de presentes</h2>
+<section id="presentes" class="sec page"><span class="eyebrow c">Presentes</span><h2 class="c">Lista de presentes</h2><i class="rule"></i>
 <p class="lead c">Sua presença é o melhor presente. Se quiser nos ajudar a montar nosso cantinho, escolha como prefere presentear.</p>
 <div class="opts">
 <article class="opt"><h3>Comprar presentes diretamente dos sites</h3>
@@ -78,14 +84,28 @@
 </div>
 </section>
 
-<div class="dm"><i></i><i class="w"></i><i></i></div>
-
-<section id="informacoes" class="sec c"><h2>Informações</h2>
-<p><b>Sábado, 05 de dezembro de 2026, às 14h30</b></p>
-<p>Rua Santa Cruz, nº 5, Chácaras Califórnia<br>Embu-Guaçu — SP</p>
-<p>Confirme até <span id="prazo2"></span>.</p>
-<p><a class="btn alt" id="mapa" target="_blank" rel="noopener" href="#">Abrir no mapa</a></p></section>
+<section id="informacoes" class="sec c page"><span class="eyebrow">Informações</span><h2>Quando &amp; onde</h2><i class="rule"></i>
+<div class="info">
+<div><span class="mini r">Data</span><span class="big">05</span><span class="mini">Dezembro 2026</span><i class="hr"></i><span class="mini">Sábado</span><span class="hora">14h30</span></div>
+<div><span class="mini r">Local</span><span class="end">Rua Santa Cruz, nº 5<br>Chácaras Califórnia<br>Embu-Guaçu — SP</span><a class="btn alt" id="mapa" target="_blank" rel="noopener" href="#">Abrir no mapa</a></div>
+</div>
+<p class="small">Confirme até <span id="prazo2"></span>. <a href="#presenca">Confirmar presença</a></p></section>
 </main>
 <footer>Com carinho, <span class="script">Marina &amp; Edward.</span></footer>
 <dialog id="dlg"><div id="dlgc"></div><button class="x" id="fechar" aria-label="Fechar">×</button></dialog>
-<script src="config.js?v=2"></script><script src="app.js?v=2"></script></body></html>
+<script src="config.js?v=4"></script><script src="app.js?v=4"></script><script>
+(function(){
+var map={inicio:"pg-inicio",presenca:"presenca",presentes:"presentes",informacoes:"informacoes"};
+function show(){
+  var h=(location.hash||"#inicio").slice(1); if(!map[h])h="inicio";
+  Object.keys(map).forEach(function(k){document.getElementById(map[k]).classList.toggle("on",k===h)});
+  document.querySelectorAll("header nav a").forEach(function(a){
+    if(a.getAttribute("href")==="#"+h)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
+  window.scrollTo({top:0,left:0,behavior:"instant"});
+  if(h==="presentes"){var p=document.querySelector("#presentes .painel:not([hidden])");if(p)setTimeout(function(){p.scrollIntoView({behavior:"smooth",block:"start"})},60)}
+}
+window.addEventListener("hashchange",show);show();
+document.querySelectorAll(".prazo-s").forEach(function(e){e.textContent=(typeof CONFIG!=="undefined"&&CONFIG.prazo)||""});
+})();
+</script>
+</body></html>

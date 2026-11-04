@@ -4,8 +4,8 @@ const CONFIG = {
   prazo: "25 de novembro de 2026",
   local: "Rua Santa Cruz, nº 5, Chácaras Califórnia, Embu-Guaçu — SP",
   formEndpoint: "https://script.google.com/macros/s/AKfycbw-PUQyHMM1lCKW3BKa5IkGBqQOScOirAtbetLeBdBVNVynb9NtTJbbot0F4NIhHsq4/exec",      // endereço que recebe a confirmação de presença (Google Apps Script) — ver LEIA-ME
-  pix: "",               // chave Pix dos anfitriões
-  pixNome: ""            // nome do titular da chave (opcional)
+  pix: "11984074656",               // chave Pix dos anfitriões
+  pixNome: "Marina Wentz de Moura"            // nome do titular da chave (opcional)
 };
 // img: link da foto do produto (deixe "" para mostrar o espaço elegante sem foto)
 // reservado: true esconde o presente da lista (se preferir fazer à mão)
